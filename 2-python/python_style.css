@@ -1,0 +1,192 @@
+/* 基本スタイル */
+body {
+    font-family: 'Noto Sans JP', "JetBrains Mono", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* ヘッダー */
+header {
+    background-color: #4B8BBE;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 見出し */
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+h2 {
+    border-bottom: 2px solid #4B8BBE;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    color: #306998;
+}
+
+h3 {
+    color: #306998;
+    margin-top: 25px;
+}
+
+/* リンク */
+a {
+    color: #306998;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* コードブロック */
+pre {
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow-x: auto;
+    border-left: 4px solid #4B8BBE;
+}
+
+pre code {
+    font-family: 'Source Code Pro', monospace;
+    color: #f8f8f2;
+}
+
+/* Prism.jsのカスタマイズ */
+pre[class*="language-"] {
+    background-color: #272822;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow-x: auto;
+    border-left: 4px solid #4B8BBE;
+}
+
+code[class*="language-"] {
+    font-family: 'Source Code Pro', monospace;
+    text-shadow: none;
+}
+
+/* レイアウト */
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ナビゲーション */
+nav {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+/* メインコンテンツ */
+.content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.important {
+    font-weight: bold;
+    color: #306998;
+}
+
+/* トップに戻るボタン */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4B8BBE;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* インラインコードのスタイル調整 */
+:not(pre) > code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #d14;
+}
+
+/* トークンカラー調整 - Pythonのシンタックスハイライト用 */
+.token.comment {
+    color: #8c8c8c;
+}
+
+.token.string {
+    color: #a6e22e;
+}
+
+.token.number {
+    color: #ae81ff;
+}
+
+.token.keyword {
+    color: #f92672;
+}
+
+.token.operator {
+    color: #f8f8f2;
+}
+
+.token.function {
+    color: #e6db74;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}
