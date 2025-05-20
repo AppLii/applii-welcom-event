@@ -2,12 +2,12 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Python チートシート</title>
-    <link rel="stylesheet" href="python_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-okaidia.min.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap">
+    <link href="python_style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-okaidia.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Source+Code+Pro:wght@400;600&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <header>
@@ -16,51 +16,56 @@
 </header>
 
 <div class="container">
+
+    <!------------  目次  ------------>
     <nav>
         <h2>目次</h2>
         <ul>
-            <li><a href="#section1">変数と基本型</a></li>
-            <li><a href="#section2">データ型の変換</a></li>
-            <li><a href="#section3">基本的な演算</a></li>
-            <li><a href="#section4">文字列操作</a></li>
-            <li><a href="#section5">入出力</a></li>
-            <li><a href="#section6">条件分岐</a></li>
-            <li><a href="#section7">繰り返し文（ループ）</a></li>
-            <li><a href="#section8">リスト（配列）</a></li>
-            <li><a href="#section9">数学関連の操作</a></li>
+            <li><a href="#section1">1. 変数と基本型</a></li>
+            <li><a href="#section2">2. データ型の変換（キャスト）</a></li>
+            <li><a href="#section3">3. 基本的な演算</a></li>
+            <li><a href="#section4">4. 文字列操作</a></li>
+            <li><a href="#section5">5. 標準入出力</a></li>
+            <li><a href="#section6">6. 条件分岐</a></li>
+            <li><a href="#section7">7. 繰り返し文（ループ）</a></li>
+            <li><a href="#section8">8. リスト（配列）</a></li>
+            <li><a href="#section9">9. 数学関連の操作（mathモジュール）</a></li>
         </ul>
     </nav>
 
     <div class="content">
+
+        <!------------  1. 変数と基本型  ------------>
         <section id="section1">
-            <h2>変数と基本型</h2>
-            <p>変数はデータを格納するための<span class="important">箱</span>です。変数名（箱の名前）を決めて値を代入することで使用できます。
+            <h2>1. 変数と基本型</h2>
+            <p>
+                変数はデータを格納するための<span class="important">箱</span>です。
+                変数名（箱の名前）を決めて値を代入することで使用できます。
             </p>
-
             <h3>基本的な変数宣言と代入</h3>
-            <p>変数に値を代入するには「=」演算子を使います。Pythonでは代入時に型が自動的に決まります。</p>
-
+            <p>
+                変数に値を代入するには「=」演算子を使います。
+                Pythonでは代入時に型が自動的に決まります。
+            </p>
             <pre><code class="language-python"># 変数の宣言と代入
 name = "太郎"          # 文字列型（str）
 age = 25              # 整数型（int）
 height = 175.5        # 浮動小数点型（float）
-is_student = True     # 真偽値型（bool）
-
-# 型ヒントをつける場合
-name: str = "太郎"
-age: int = 25
-height: float = 175.5
-is_student: bool = True</code></pre>
+is_student = True     # 真偽値型（bool）</code></pre>
         </section>
 
+        <!------------  2. データ型の変換（キャスト）  ------------>
         <section id="section2">
-            <h2>データ型の変換</h2>
+            <h2>2. データ型の変換（キャスト）</h2>
             <p>
-                Pythonでは、ある型のデータを別の型に変換する必要がある場合があります。これを型変換（キャスト）と呼びます。Pythonには組み込み関数としてint()、float()、str()、bool()などがあり、これらを使って型変換を行います。</p>
-
+                Pythonでは、ある型のデータを別の型に変換する必要がある場合があります。これを型変換（キャスト）と呼びます。
+                Pythonには組み込み関数（標準で元から備えついている関数）としてint()、float()、str()、bool()などがあり、
+                これらを使って型変換を行います。
+            </p>
             <h3>文字列から数値への変換</h3>
-            <p>数値として表現された文字列を実際の数値データ型に変換するには、int()やfloat()関数を使います。</p>
-
+            <p>数値として表現された文字列を実際の数値データ型に変換するには、
+                int()やfloat()関数を使います。
+            </p>
             <pre><code class="language-python"># 文字列→数値
 num_str = "42"
 num_int = int(num_str)    # 42 (整数型)
@@ -76,15 +81,18 @@ is_empty = bool(0)       # False
 is_none = bool(None)     # False (None, 0, 空文字列、空リストなどはFalse)</code></pre>
         </section>
 
+        <!------------  3. 基本的な演算  ------------>
         <section id="section3">
-            <h2>基本的な演算</h2>
-            <p>Pythonでは様々な算術演算子が用意されており、数値計算を簡単に行うことができます。
-                また、複合代入演算子を使うことで、より簡潔なコードを書くことができます。</p>
-
+            <h2>3. 基本的な演算</h2>
+            <p>
+                Pythonでは様々な算術演算子が用意されており、数値計算を簡単に行うことができます。
+                また、複合代入演算子を使うことで、より簡潔なコードを書くことができます。
+            </p>
             <h3>算術演算子</h3>
-            <p>基本的な四則演算から、整数除算、剰余計算、べき乗まで多様な演算が可能です。
-                割り算の結果は常に浮動小数点数になることに注意しましょう。</p>
-
+            <p>
+                基本的な四則演算から、整数除算、剰余計算、べき乗まで多様な演算が可能です。
+                割り算の結果は常に浮動小数点数になることに注意しましょう。
+            </p>
             <pre><code class="language-python"># 算術演算
 a = 10
 b = 3
@@ -104,11 +112,13 @@ x *= 4    # x = x * 4 と同じ (x は 24)
 x /= 3    # x = x / 3 と同じ (x は 8.0)</code></pre>
         </section>
 
+        <!------------  4. 文字列操作  ------------>
         <section id="section4">
-            <h2>文字列操作</h2>
-            <p>Pythonでは文字列（テキスト）データを柔軟に操作するための多様な機能が提供されています。
-                文字列の結合、繰り返し、フォーマットなど基本的な操作から、検索や置換などの高度な操作まで可能です。</p>
-
+            <h2>4. 文字列操作</h2>
+            <p>
+                Pythonでは文字列（テキスト）データを柔軟に操作するための多様な機能が提供されています。
+                文字列の結合、繰り返し、フォーマットなど基本的な操作から、検索や置換などの高度な操作まで可能です。
+            </p>
             <h3>基本的な文字列操作</h3>
             <pre><code class="language-python"># 文字列の結合
 first_name = "太郎"
@@ -134,23 +144,27 @@ print(s.strip())        # "Hello, World!" (前後の空白を削除)
 print(s.replace("World", "Subaru")) # "  Hello, Subaru!  " (文字置換)</code></pre>
         </section>
 
-        <section id="section5">
-            <h2>入出力</h2>
-            <p>プログラムでユーザーとのやり取りを行うために、入出力機能を用います。
-                標準入力（input関数）と標準出力（print関数）を使います。</p>
 
+        <!------------  5. 標準入出力  ------------>
+        <section id="section5">
+            <h2>5. 標準入出力</h2>
+            <p>
+                プログラムでユーザーとのやり取りを行うために、入出力機能を用います。
+                標準入力（input関数）と標準出力（print関数）を使います。
+            </p>
             <h3>ユーザー入力の取得</h3>
             <p>
-                input関数はユーザーからの入力を文字列として取得します。数値として処理したい場合は、明示的に型変換が必要です。</p>
-
+                input関数はユーザーからの入力を文字列として取得します。
+                数値として処理したい場合は、明示的に型変換が必要です。
+            </p>
             <pre><code class="language-python"># 標準入力（キーボードからの入力）
 name = input("あなたの名前を入力してください: ")    # プロンプトメッセージを表示して入力を取得
 
 # 数値の入力
-age = int(input("年齢を入力してください: "))    # 文字列を整数に変換
+age = int(input())    # 文字列を整数に変換
 
 # 複数の値の入力（半角スペース区切り）
-x, y = map(int, input("2つの数値を空白区切りで入力してください: ").split())
+x, y = map(int, input().split())
 
 # 標準出力
 print("こんにちは")    # こんにちは
@@ -163,14 +177,17 @@ print("こんにちは", end="!")    # こんにちは!（改行されない）
 print("プログラミング", "は", "楽しい", sep="")  # プログラミングは楽しい</code></pre>
         </section>
 
+        <!------------  6. 条件分岐  ------------>
         <section id="section6">
-            <h2>条件分岐</h2>
+            <h2>6. 条件分岐</h2>
             <p>
-                条件分岐はプログラムの流れを制御する基本的な構造の一つです。</p>
-
+                条件分岐はプログラムの流れを制御する基本的な構造の一つです。
+            </p>
             <h3>if文の基本構造</h3>
-            <p>条件に応じて処理を分岐させる基本的な方法です。インデントでブロックを表現することに注意してください。</p>
-
+            <p>
+                条件に応じて処理を分岐させる基本的な方法です。
+                インデントでブロックを表現することに注意してください。
+            </p>
             <pre><code class="language-python"># if文の基本
 age = 19
 if age >= 18:
@@ -201,22 +218,19 @@ else:
 # 否定
 is_rainy = False
 if not is_rainy:    # Falseの否定はTrue
-    print("お出かけしましょう")
-
-# 三項演算子（条件演算子）
-age = 20
-status = "成人" if age >= 18 else "未成年"  # 条件が真なら左側、偽なら右側の値を代入</code></pre>
+    print("お出かけしましょう")</code></pre>
         </section>
 
+        <!------------  7. 繰り返し分（ループ）  ------------>
         <section id="section7">
-            <h2>繰り返し文（ループ）</h2>
+            <h2>7. 繰り返し文（ループ）</h2>
             <p>繰り返し処理は、同じ処理を複数回実行する場合や、データを順番に処理する場合に使用します。
                 Pythonでは主にfor文とwhile文の2種類のループ構造が用意されています。</p>
-
             <h3>for文とrange関数</h3>
             <p>
-                for文は指定した回数だけ繰り返すことができ、特にrange関数と組み合わせることで数値範囲に対するループを簡単に記述できます。</p>
-
+                for文は指定した回数だけ処理を繰り返します。
+                特にrange関数と組み合わせることで数値範囲に対するループを簡単に記述できます。
+            </p>
             <pre><code class="language-python"># for文の基本（range関数）
 for i in range(5):    # 0から4まで繰り返し
     print(i)    # 0, 1, 2, 3, 4 が順に表示される
@@ -262,18 +276,18 @@ for i in range(5):
     print(i)    # 0, 1, 3, 4 が表示される（2は表示されない）</code></pre>
         </section>
 
+        <!------------  8. リスト（配列）  ------------>
         <section id="section8">
-            <h2>リスト（配列）</h2>
+            <h2>8. リスト（配列）</h2>
             <p>リストは複数の値を順序付けて格納するときに用いられます。</p>
-
             <h3>リストの基本操作</h3>
-            <p>リストは角括弧 [ ]
-                で囲んで作成し、カンマで要素を区切ります。インデックスは0から始まることに注意しましょう。</p>
-
+            <p>
+                リストは角括弧 [ ]で囲んで作成し、カンマで要素を区切ります。
+                インデックスは0から始まることに注意しましょう。
+            </p>
             <pre><code class="language-python"># リストの作成
 int_numbers = [1, 2, 3, 4, 5]    # 整数のリスト
 float_numbers = [1.2, 2.3, 3.4, 4.5, 5.6]    # 小数のリスト
-mixed = [1, "こんにちは", 3.14, True]  # 異なる型が混在したリスト
 empty = []    # 空のリスト
 
 # 要素へのアクセス（インデックスは0から始まる）
@@ -300,8 +314,9 @@ fruits.sort()                # 昇順にソート: ["りんご", "ぶどう"]
 len(fruits)                  # リストの長さを取得: 2</code></pre>
         </section>
 
+        <!------------  9. 数学関連の操作（mathモジュール）  ------------>
         <section id="section9">
-            <h2>数学関連の操作（mathモジュール）</h2>
+            <h2>9. 数学関連の操作（mathモジュール）</h2>
             <p>Pythonには<code>math</code>モジュールという標準ライブラリが用意されており、さまざまな数学的関数や定数を提供しています。このモジュールを使用するには、まず<code>import
                 math</code>でインポートする必要があります。</p>
 
@@ -313,9 +328,7 @@ len(fruits)                  # リストの長さを取得: 2</code></pre>
 # 定数
 print(math.pi)          # 円周率: 3.141592...
 print(math.e)           # 自然対数の底: 2.718281...
-print(math.tau)         # 2π: 6.283185...
 print(math.inf)         # 無限大
-print(math.nan)         # 非数
 
 # 基本的な関数
 print(math.sqrt(16))    # 平方根: 4.0
@@ -324,15 +337,7 @@ print(math.fabs(-5))    # 絶対値: 5.0
 print(math.ceil(4.3))   # 切り上げ: 5
 print(math.floor(4.7))  # 切り捨て: 4
 print(math.trunc(4.7))  # 整数部分: 4
-
-# 三角関数（引数はラジアン）
-print(math.sin(math.pi/2))   # sin(π/2): 1.0
-print(math.cos(math.pi))     # cos(π): -1.0
-print(math.tan(math.pi/4))   # tan(π/4): 1.0
-
-# 度とラジアンの変換
-print(math.degrees(math.pi)) # ラジアンから度へ: 180.0
-print(math.radians(180))     # 度からラジアンへ: 3.141592...</code></pre>
+# 他にも三角関数や対数に関するものもあります！</code></pre>
         </section>
     </div>
 </div>
