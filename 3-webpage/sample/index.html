@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AppLii活動体験会</title>
+    <link rel="stylesheet" href="./style.css"> <!-- この行は消さないで！ -->
+</head>
+
+<body> <!-- ここからがページ本体の部分です -->
+
+    <!-- ページのテーマカラーを変えたいときは、style.cssを見てくださいね！ -->
+
+    <!-- ヘッダ -->
+    <header>
+        <p>AppLii活動体験会 HTMLでWebページを作ろう！</p>
+    </header>
+
+    <div id="title" class="container"> <!-- タイトルのブロック --> <!-- クイズ！背景画像はどうやって指定しているでしょうか？ -->
+        <p id="title_text">溝上幸太の自己紹介</p>
+    </div>
+
+    <!-- 自己紹介のセクション -->
+    <section id="overview" class="container">
+        <h1>自己紹介</h1> <!-- セクションのタイトルです。 -->
+        <div class="child-image-row">
+            <div class="child">
+                <div id="name_area">
+                    <p id="name">溝上 幸太</p>
+                    <p id="nameEN">Kota Mizokami</p>
+                </div>
+                <p>
+                    こんにちは！溝上幸太です。<br>
+                    和歌山県出身の19歳、大学生です。もうすぐ誕生日なので、20歳になります！<br> <!-- クイズ！<br>タグにはどんな意味があるのでしょう？ -->
+                    情報セキュリティとネットワーク技術が好きで、勉強中です。<br>
+                    皆さんと一緒に、楽しくアプリ開発ができたら嬉しいです！<br>
+                </p>
+            </div>
+            <img src="./assets/portrait.jpg" alt="顔写真"> <!-- クイズ！画像の保存場所はどこでしょう？ -->
+        </div>
+        <!-- ここに上のdivをコピーすると、もう一人分作れますね。 -->
+    </section>
+
+    <!-- 趣味のセクション -->
+    <section id="hobby_text" class="container">
+        <h1>趣味</h1>
+        <div>
+            <h2>溝上の趣味</h2>
+            <div class="child-image-row">
+                <div class="child">
+                    <p>私は色んな事に興味があるので、趣味もたくさんあります。</p>
+                    <p>下に、その一部をまとめます。</p>
+                    <ul>
+                        <li>写真<span> ←特に好き！</span></li>
+                        <li>映像</li>
+                        <li>プログラミング</li>
+                        <li>音楽 <span>（聴くこと、ギターを弾くこと）</span></li>
+                        <li>CTF<span> セキュリティのゲームみたいなもの</span></li>
+                </div>
+                <img src="./assets/camera.JPG" alt="カメラの写真">
+            </div>
+        </div>
+    </section>
+
+    <!-- 資格のセクション -->
+    <section id="certificates" class="container">
+        <h1>資格など</h1>
+        <p>これまでに取得した資格などをご紹介します。</p>
+        <table class="timeline-table">
+            <tr>
+                <th>取得年月</th>
+                <th>資格・試験名</th>
+            </tr>
+            <tr>
+                <td>2022年7月（高校2年）</td>
+                <td>基本情報技術者試験</td>
+            </tr>
+            <tr>
+                <td>2022年8月（高校2年）</td>
+                <td>映像音響処理技術者</td>
+            </tr>
+            <tr>
+                <td>2024年12月（大学1年）</td>
+                <td>応用情報技術者試験</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2025 溝上幸太</p> <!-- この部分は著作権表示です。必要に応じて変更してください。 -->
+    </footer>
+
+</body> <!-- ここまでがページ本体の部分です -->
+</html>
