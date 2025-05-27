@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>404 Not Found - 宇宙に消えたページ</title>
+    <style>
+        body {
+            background: #1a1a2e;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .ufo {
+            margin: 60px auto 0;
+            width: 200px;
+            height: 120px;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .ufo-base {
+            width: 200px;
+            height: 60px;
+            background: #7f8fa6;
+            border-radius: 100px 100px 60px 60px / 60px 60px 40px 40px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 8px 30px #00f2fe88;
+        }
+
+        .ufo-glass {
+            width: 120px;
+            height: 60px;
+            background: #00f2fe;
+            opacity: 0.7;
+            border-radius: 60px 60px 60px 60px / 40px 40px 60px 60px;
+            position: absolute;
+            top: 0;
+            left: 40px;
+            box-shadow: 0 0 30px #00f2fe88;
+        }
+
+        .beam {
+            position: absolute;
+            top: 60px;
+            left: 80px;
+            width: 40px;
+            height: 180px;
+            background: linear-gradient(to bottom, #00f2fe88 0%, #00f2fe00 100%);
+            border-radius: 20px 20px 80px 80px / 40px 40px 180px 180px;
+            z-index: 0;
+            animation: beam-flicker 2s infinite alternate;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes beam-flicker {
+            0%, 100% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .notfound {
+            font-size: 4rem;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #00f2fe;
+            text-shadow: 0 0 10px #00f2fe88;
+        }
+
+        .desc {
+            font-size: 1.3rem;
+            margin: 20px 0 40px 0;
+            color: #fff;
+            opacity: 0.85;
+        }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 32px;
+            background: #00f2fe;
+            color: #1a1a2e;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 10px #00f2fe44;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .home-link:hover {
+            background: #fff;
+            color: #00f2fe;
+        }
+    </style>
+</head>
+<body>
+<div class="ufo">
+    <div class="ufo-glass"></div>
+    <div class="ufo-base"></div>
+    <div class="beam"></div>
+</div>
+<div class="notfound">404 Not Found</div>
+<div class="desc">
+    お探しのページは宇宙人にさらわれてしまったようです。<br>
+    もしかして、地球に戻りますか？
+</div>
+<a class="home-link" href="/3-webpage/">ホームに戻る</a>
+</body>
+</html>
