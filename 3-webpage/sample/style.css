@@ -1,5 +1,6 @@
 :root {
-    --theme-color: #9FD6DF; /* テーマカラーを変えたいときはここを編集してください！ */
+    --theme-color: #9FD6DF;
+    /* テーマカラーを変えたいときはここを編集してください！ */
 }
 
 /* グローバル設定：box-sizingを明示 */
@@ -40,7 +41,8 @@ header {
     text-align: left;
 }
 
-#title {
+.container.title {
+    /* .container かつ .title の両方を持つ要素にだけ適用 */
     font-size: 2em;
     color: #f8f8f8;
     text-align: center;
@@ -51,10 +53,10 @@ header {
     background-repeat: no-repeat;
 }
 
-#title_text {
+.title_text {
     width: 100%;
     height: 100%;
-    text-shadow: 4px 4px 4px rgba(0,0,0,0.7);
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* 注意書き */
@@ -73,14 +75,14 @@ h1 {
 }
 
 /* 名前エリア */
-#name_area {
+.name_area {
     display: flex;
     justify-content: left;
     align-items: center;
     gap: 1em;
 }
 
-#name {
+.name {
     font-size: 2em;
     color: #4a4a4a;
     margin-bottom: 0.5em;
